@@ -7,7 +7,7 @@ for(let i=0;i<carouselArr.length;i++){
 	$(carouselArr[i]).attr('id',i).css('left',mainOffset+mainWidth)
 }
 $(`#${counter}`).css('left',mainOffset)
-$('#prevButton').on('click',function left(){
+$('#prevButton').on('click',function (){
 	if(flag === true){
 		flag = false
 		for(let i=0;i<$(carouselArr[counter]).siblings().length;i++){
@@ -23,7 +23,7 @@ $('#prevButton').on('click',function left(){
 		$(`#${counter}`).show((function(){flag=true})).css('left',mainOffset)
 	}
 })
-$('#nextButton').on('click',function right(){
+$('#nextButton').on('click',function (){
 	if(flag === true){
 		flag = false
 		for(let i=0;i<$(carouselArr[counter]).siblings().length;i++){
@@ -32,10 +32,10 @@ $('#nextButton').on('click',function right(){
 			}
 		}
 		$(`#${counter}`).css('left',mainOffset+mainWidth)
-		if(counter === 0){
-			counter = carouselArr.length
+		if(counter === carouselArr.length-1){
+			counter = 0
 		}
-		counter--
+		counter++
 		$(`#${counter}`).show((function(){flag=true})).css('left',mainOffset)
 	}
 })
