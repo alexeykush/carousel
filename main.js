@@ -1,4 +1,4 @@
-let counter = 0;
+let counter = 0
 let flag = true
 let carouselArr = $(".carousel-item")
 let mainWidth = $($('.carousel')[0]).width()
